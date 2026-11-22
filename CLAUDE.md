@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Stack
 
-Spring Boot 4.1.2 (Spring MVC via `spring-boot-starter-webmvc`), Java 27, Lombok, Maven (wrapper pins Maven 3.10.0). No database or persistence layer yet.
+Spring Boot 4.1.2 (Spring MVC via `spring-boot-starter-webmvc`), Java 27, Lombok, Maven (wrapper pins Maven 3.10.0). No database or persistence layer yet. Spring Data JPA is planned (see [docs/configuration.md](docs/configuration.md#database--jpa)).
 
 ## Commands
 
@@ -20,15 +20,26 @@ There is no linter or formatter configured.
 
 ## Architecture
 
-Everything currently lives flat in the `com.app.ecom` package; there are no separate controller/service/repository layers yet.
+Request flow: `Client → Controller → Service → (Repository → Database, planned)`. All classes currently sit in the single package `com.app.ecom`, with `EcomApplication` as the entry point. Details: [docs/architecture.md](docs/architecture.md).
 
-- `EcomApplication` — Spring Boot entry point.
-- `User` — Lombok `@Data` POJO (`id`, `firstName`, `lastName`).
-- `UserController` — `@RestController` exposing `GET /api/users` and `POST /api/users`. Users are held in an in-memory `ArrayList` field on the controller (singleton bean), so data is lost on restart and the list is not thread-safe. `POST` returns the full list rather than the created user.
+- **Controllers** (`@RestController`, e.g. `UserController` on `/api/users`): handle HTTP only (routing, request/response JSON, status codes) and delegate to services. → [docs/controller.md](docs/controller.md)
+- **Services** (`@Service`, e.g. `UserService`): hold business logic. `UserService` also stores users in an in-memory `ArrayList` with an id counter, so data is lost on restart and storage isn't thread-safe. → [docs/service.md](docs/service.md)
+- **Model** (`User`, a Lombok `@Data` POJO with `id`, `firstName`, `lastName`): will become a JPA `@Entity`. → [docs/model.md](docs/model.md)
+- **Repositories** (planned): Spring Data JPA interfaces (`JpaRepository`) handling all database operations through entities instead of SQL. Only services call them. → [docs/repository.md](docs/repository.md)
 
-## Documentation
+Endpoint reference: [docs/api.md](docs/api.md). Config and the planned DB setup: [docs/configuration.md](docs/configuration.md). Tests: [docs/testing.md](docs/testing.md).
 
-All code documentation goes in `docs/` as Markdown files (e.g. `docs/<layer>.md`). Check there for coding standards before changing a layer.
+## Documentation maintenance (required)
+
+Detailed docs live in `docs/` (index and code→doc mapping: [docs/README.md](docs/README.md)). This file and `README.md` hold only the high-level overview. **Every code change must update the matching docs in the same change**:
+
+- Read the relevant `docs/<layer>.md` for conventions before changing a layer.
+- Controller or endpoint change → `docs/controller.md`, `docs/api.md`, and the API table in `README.md`.
+- Service change → `docs/service.md`. Model or entity change → `docs/model.md`. Repository or query change → `docs/repository.md`.
+- New dependency, property or plugin → `docs/configuration.md` (and the Stack line above if it's significant).
+- New layer or area (DTOs, exception handling, security, validation, ...) → create `docs/<area>.md` and link it from `docs/README.md`, `README.md` and the Architecture section above.
+- When something marked **Status: planned** is built (e.g. JPA/repositories), rewrite that section as **current**. Remove fixed items from **Known issues** lists, and add new ones you notice.
+- Keep this Architecture section and `README.md` in sync with the actual layers.
 
 ## Build notes
 

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -21,13 +22,29 @@ public class UserService {
         userList.add(user);
 
     }
-    public User fetchUser(Long id){
-        for (User user:userList){
-            if (user.getId().equals(id)){
-                return user;
-            }
+    public Optional<User> fetchUser(Long id){
+//        for (User user:userList){
+//            if (user.getId().equals(id)){
+//                return user;
+//            }
+//        }
+//        return null;
+        return userList.stream()
+                .filter(user -> user.getId().equals(id))
+                .findFirst();
+    }
+
+    public boolean updateUser(Long id,User updatedUser){
+        Optional<User> found=userList.stream()
+                .filter(user -> user.getId().equals(id))
+                .findFirst();
+        if (found.isPresent()){
+            User existing=found.get();
+            existing.setFirstName(updatedUser.getFirstName());
+            existing.setLastName(updatedUser.getLastName());
+            return true;
         }
-        return null;
+        return false;
     }
 
 }
