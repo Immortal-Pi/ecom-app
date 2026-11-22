@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/users")
 public class UserController {
 
     private final UserService userService;
@@ -18,26 +19,38 @@ public class UserController {
     // mappings
     private List<User> userList = new ArrayList<>();
 
-    @GetMapping("/api/users")
+    @GetMapping
+//    @RequestMapping(value = "/api/users",method=RequestMethod.GET)
     public ResponseEntity<List<User>> getAllUsers(){
         return new ResponseEntity<>(userService.fetchallUsers(),HttpStatus.OK);
        // return ResponseEntity.ok(userService.fetchallUsers());
     }
 
     //adding users
-    @PostMapping("/api/users")
+    @PostMapping
     public ResponseEntity<String> createUsers(@RequestBody  User user){
         userService.createUser(user);
         return new ResponseEntity<>("User added successfully",HttpStatus.OK);
     }
 
-    @GetMapping("/api/users/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> getAllUsers(@PathVariable long id){
-        User user = userService.fetchUser(id);
-        if (user==null){
-            return ResponseEntity.notFound().build();
-        }
-        return new ResponseEntity<>(userService.fetchUser(id),HttpStatus.OK);
+//        User user = userService.fetchUser(id);
+//        if (user==null){
+//            return ResponseEntity.notFound().build();
+//        }
+//        return new ResponseEntity<>(userService.fetchUser(id),HttpStatus.OK);
+        return userService.fetchUser(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(()->ResponseEntity.notFound().build());
 
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateUsers(@PathVariable long id,@RequestBody User updatedUser){
+        if(userService.updateUser(id,updatedUser)){
+            return new ResponseEntity<>("User updated successfully",HttpStatus.OK);
+        }
+        return ResponseEntity.notFound().build();
     }
 }
