@@ -1,0 +1,31 @@
+$kind: http-request
+url: http://localhost:8080/api/users/1
+method: PUT
+body:
+  type: json
+  content: " {\r
+
+    \    \"firstName\": \"Arjun\",\r
+
+    \    \"lastName\": \"Patel Singh\",\r
+
+    \    \"email\": \"arjun.patel@example.com\",\r
+
+    \    \"phone\": \"4155550104\",\r
+
+    \    \"address\": {\r
+
+    \      \"street\": \"456 Pine Street\",\r
+
+    \      \"city\": \"San Francisco\",\r
+
+    \      \"state\": \"CA\",\r
+
+    \      \"country\": \"USA\",\r
+
+    \      \"zipcode\": \"94102\"\r
+
+    \    }\r
+
+    \  }"
+order: 2000

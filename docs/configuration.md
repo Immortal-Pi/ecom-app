@@ -30,7 +30,7 @@ Use `./mvnw` in Git Bash and `.\mvnw.cmd` in PowerShell.
 
 ## `application.properties`
 
-`src/main/resources/application.properties`, currently:
+`../src/main/resources/application.yaml`, currently:
 
 ```properties
 spring.application.name=ecom-application

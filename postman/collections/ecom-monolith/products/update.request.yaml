@@ -1,0 +1,23 @@
+$kind: http-request
+url: http://localhost:8080/api/products/3
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Portable Power Bank v2\",\r
+
+    \    \"description\": \"20000mAh portable charger with USB-C fast charging.\",\r
+
+    \    \"price\": 39.99,\r
+
+    \    \"stockQuantity\": 0,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/power-bank.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  }"
+order: 2000

@@ -1,0 +1,22 @@
+#spring.application.name=ecom-application
+#spring.h2.console.enabled=true
+#spring.database.url=jdbc:h2:mem:test
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=create  # cannot create this in prod - when application restarts the server gets wiped out
+spring:
+  application:
+    name: ecom-application
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:test
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: create
+
+  logging:
+    level:
+      org.hibernate.orm.jdbc.bind: trace
