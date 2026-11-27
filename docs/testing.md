@@ -25,6 +25,6 @@ Commands are in [configuration.md](configuration.md#commands) (`./mvnw test`, `-
 
 ## Conventions
 
-- Mirror the main package: tests for `com.app.ecom.UserService` go in `src/test/java/com/app/ecom/UserServiceTest.java`.
+- Mirror the main package: tests for `com.app.ecom.service.UserService` go in `src/test/java/com/app/ecom/UserServiceTest.java`.
 - Name test methods after the behaviour: `fetchUser_returnsEmpty_whenIdUnknown`.
 - Any new endpoint should come with at least one controller test for the success path and one for the not-found or invalid path.

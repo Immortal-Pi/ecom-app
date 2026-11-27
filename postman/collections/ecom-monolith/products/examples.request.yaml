@@ -1,0 +1,279 @@
+$kind: http-request
+url: ""
+method: GET
+body:
+  type: json
+  content: "[\r
+
+    \  {\r
+
+    \    \"name\": \"Wireless Bluetooth Headphones\",\r
+
+    \    \"description\": \"Noise-cancelling wireless headphones with 30-hour battery life.\",\r
+
+    \    \"price\": 149.99,\r
+
+    \    \"stockQuantity\": 50,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/headphones.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Mechanical Gaming Keyboard\",\r
+
+    \    \"description\": \"RGB backlit mechanical keyboard with programmable keys.\",\r
+
+    \    \"price\": 89.99,\r
+
+    \    \"stockQuantity\": 75,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/keyboard.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Wireless Mouse\",\r
+
+    \    \"description\": \"Ergonomic wireless mouse with adjustable DPI.\",\r
+
+    \    \"price\": 29.99,\r
+
+    \    \"stockQuantity\": 120,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/mouse.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Men's Running Shoes\",\r
+
+    \    \"description\": \"Lightweight running shoes with breathable mesh.\",\r
+
+    \    \"price\": 79.99,\r
+
+    \    \"stockQuantity\": 40,\r
+
+    \    \"category\": \"Footwear\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/running-shoes.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Cotton T-Shirt\",\r
+
+    \    \"description\": \"Premium cotton round-neck casual T-shirt.\",\r
+
+    \    \"price\": 19.99,\r
+
+    \    \"stockQuantity\": 200,\r
+
+    \    \"category\": \"Clothing\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/tshirt.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Smart Fitness Watch\",\r
+
+    \    \"description\": \"Fitness smartwatch with heart rate and sleep monitoring.\",\r
+
+    \    \"price\": 199.99,\r
+
+    \    \"stockQuantity\": 35,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/smartwatch.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Stainless Steel Water Bottle\",\r
+
+    \    \"description\": \"Insulated 750ml water bottle that keeps drinks cold for 24 hours.\",\r
+
+    \    \"price\": 24.99,\r
+
+    \    \"stockQuantity\": 150,\r
+
+    \    \"category\": \"Accessories\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/water-bottle.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Adjustable Dumbbell Set\",\r
+
+    \    \"description\": \"Adjustable dumbbells suitable for home strength training.\",\r
+
+    \    \"price\": 249.99,\r
+
+    \    \"stockQuantity\": 15,\r
+
+    \    \"category\": \"Fitness\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/dumbbells.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Laptop Backpack\",\r
+
+    \    \"description\": \"Water-resistant travel backpack with a 15-inch laptop compartment.\",\r
+
+    \    \"price\": 49.99,\r
+
+    \    \"stockQuantity\": 85,\r
+
+    \    \"category\": \"Accessories\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/backpack.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"4K Smart Television\",\r
+
+    \    \"description\": \"55-inch Ultra HD smart television with HDR support.\",\r
+
+    \    \"price\": 599.99,\r
+
+    \    \"stockQuantity\": 10,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/television.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Automatic Coffee Maker\",\r
+
+    \    \"description\": \"Programmable coffee maker with a reusable filter.\",\r
+
+    \    \"price\": 69.99,\r
+
+    \    \"stockQuantity\": 45,\r
+
+    \    \"category\": \"Home Appliances\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/coffee-maker.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Ergonomic Office Chair\",\r
+
+    \    \"description\": \"Adjustable office chair with lumbar support and mesh backrest.\",\r
+
+    \    \"price\": 299.99,\r
+
+    \    \"stockQuantity\": 20,\r
+
+    \    \"category\": \"Furniture\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/office-chair.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Portable Power Bank\",\r
+
+    \    \"description\": \"20000mAh portable charger with USB-C fast charging.\",\r
+
+    \    \"price\": 39.99,\r
+
+    \    \"stockQuantity\": 0,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/power-bank.jpg\",\r
+
+    \    \"active\": true\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Digital Camera\",\r
+
+    \    \"description\": \"Compact digital camera with 24MP resolution and optical zoom.\",\r
+
+    \    \"price\": 449.99,\r
+
+    \    \"stockQuantity\": 0,\r
+
+    \    \"category\": \"Electronics\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/camera.jpg\",\r
+
+    \    \"active\": false\r
+
+    \  },\r
+
+    \  {\r
+
+    \    \"name\": \"Classic Leather Wallet\",\r
+
+    \    \"description\": \"Premium leather wallet with multiple card compartments.\",\r
+
+    \    \"price\": 34.99,\r
+
+    \    \"stockQuantity\": 25,\r
+
+    \    \"category\": \"Accessories\",\r
+
+    \    \"imageUrl\": \"https://example.com/images/wallet.jpg\",\r
+
+    \    \"active\": false\r
+
+    \  }\r
+
+    ]"
+order: 445
